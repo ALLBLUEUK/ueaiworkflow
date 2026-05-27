@@ -70,6 +70,10 @@ ueai status course-projects/tariff-impact
 ueai validate course-projects/tariff-impact
 ```
 
+## Reproducible example
+
+See `docs/run-example.md` for a complete run log. The example clones the repository, installs the tool, creates a tariff impact course project, validates the generated folder, and lists the generated stage files.
+
 ## Use with an AI coding assistant
 
 This repository includes `AGENTS.md`, Claude plugin metadata, commands, skills, rules, and reviewer prompts. In Codex CLI, clone the repository into a project and keep `AGENTS.md` in the project root. In Claude Code, install it as a local plugin or copy the `skills`, `rules`, and `commands` folders into a project plugin directory.
