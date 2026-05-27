@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ueaiworkflow"
+version = "0.1.0"
+description = "AI-assisted undergraduate economics workflow for data, modeling, reporting, and evidence archiving."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Jia Ningyuan", email = "0337003370@uibe.edu.cn" }
+]
+keywords = [
+  "economics",
+  "undergraduate-teaching",
+  "ai-workflow",
+  "course-design",
+  "research-writing",
+  "trade-data",
+  "modeling"
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Education",
+  "Topic :: Scientific/Engineering"
+]
+
+[project.scripts]
+ueai = "ueai_workflow.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ueai_workflow = ["templates/*.md"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

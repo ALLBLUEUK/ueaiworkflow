@@ -1,0 +1,27 @@
+{
+  "name": "ueai-marketplace",
+  "owner": {
+    "name": "Jia Ningyuan",
+    "email": "0337003370@uibe.edu.cn"
+  },
+  "plugins": [
+    {
+      "name": "ueai",
+      "description": "Undergraduate economics AI workflow for course questions, data paths, modeling notes, report writing, feedback logs, and teaching reform evidence.",
+      "author": {
+        "name": "Jia Ningyuan",
+        "email": "0337003370@uibe.edu.cn"
+      },
+      "category": "education",
+      "source": "./",
+      "keywords": [
+        "economics",
+        "undergraduate-teaching",
+        "ai-workflow",
+        "course-design",
+        "research-writing"
+      ],
+      "homepage": "https://github.com/ALLBLUEUK/ueaiworkflow"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "ueai",
+  "version": "0.1.0",
+  "description": "AI assisted workflow for undergraduate economics teaching: problem framing, data path, model notes, result interpretation, paper writing, feedback log, and evidence archiving.",
+  "author": {
+    "name": "Jia Ningyuan",
+    "email": "0337003370@uibe.edu.cn",
+    "url": "https://github.com/ALLBLUEUK/ueaiworkflow"
+  },
+  "homepage": "https://github.com/ALLBLUEUK/ueaiworkflow",
+  "license": "MIT",
+  "keywords": [
+    "economics",
+    "undergraduate-teaching",
+    "ai-workflow",
+    "course-design",
+    "research-writing",
+    "trade-data",
+    "modeling",
+    "evidence-archiving"
+  ],
+  "config": {
+    "default_project_layout": {
+      "problem": "00_problem/",
+      "data": "01_data/",
+      "model": "02_model/",
+      "results": "03_results/",
+      "writing": "04_writing/",
+      "feedback": "05_feedback/",
+      "evidence": "evidence/"
+    }
+  }
+}
