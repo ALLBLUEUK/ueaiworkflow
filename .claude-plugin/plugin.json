@@ -1,33 +1,43 @@
 {
-  "name": "ueai",
-  "version": "0.1.0",
-  "description": "AI assisted workflow for undergraduate economics teaching: problem framing, data path, model notes, result interpretation, paper writing, feedback log, and evidence archiving.",
-  "author": {
-    "name": "Jia Ningyuan",
-    "email": "0337003370@uibe.edu.cn",
-    "url": "https://github.com/ALLBLUEUK/ueaiworkflow"
-  },
+  "name": "ueaiworkflow",
+  "version": "2.0.0",
+  "description": "经管类本科建模与写作 AI 智能体辅助工作流：6 阶段课程项目 + 提示词 + 证据归档",
+  "author": "ALLBLUEUK",
   "homepage": "https://github.com/ALLBLUEUK/ueaiworkflow",
   "license": "MIT",
-  "keywords": [
-    "economics",
-    "undergraduate-teaching",
-    "ai-workflow",
-    "course-design",
-    "research-writing",
-    "trade-data",
-    "modeling",
-    "evidence-archiving"
-  ],
-  "config": {
-    "default_project_layout": {
-      "problem": "00_problem/",
-      "data": "01_data/",
-      "model": "02_model/",
-      "results": "03_results/",
-      "writing": "04_writing/",
-      "feedback": "05_feedback/",
-      "evidence": "evidence/"
+  "commands": [
+    {
+      "name": "ueai-new",
+      "file": ".claude/commands/ueai-new.md",
+      "description": "Scaffold a new ueai course-research project (6 stages + evidence)"
+    },
+    {
+      "name": "ueai-stage",
+      "file": ".claude/commands/ueai-stage.md",
+      "description": "Run one of the six ueai workflow stages (00..05)"
+    },
+    {
+      "name": "ueai-review",
+      "file": ".claude/commands/ueai-review.md",
+      "description": "Reviewer persona — critique the paper draft"
+    },
+    {
+      "name": "ueai-archive",
+      "file": ".claude/commands/ueai-archive.md",
+      "description": "Walk evidence_checklist.md, mark items, list missing"
+    },
+    {
+      "name": "ueai-validate",
+      "file": ".claude/commands/ueai-validate.md",
+      "description": "Lint a ueai project — stage completeness + evidence + integrity"
     }
-  }
+  ],
+  "skills": [
+    ".claude/skills/ueai-problem-framing",
+    ".claude/skills/ueai-data-path",
+    ".claude/skills/ueai-model-explain",
+    ".claude/skills/ueai-result-interpret",
+    ".claude/skills/ueai-paper-structure",
+    ".claude/skills/ueai-evidence-archive"
+  ]
 }

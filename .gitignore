@@ -1,16 +1,24 @@
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.venv/
-venv/
-dist/
-build/
-*.egg-info/
+# Compiled LaTeX
+*.aux
 *.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# OS
 .DS_Store
 Thumbs.db
-course-projects/
-student-submissions/
-private-evidence/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local AI state
+.claude/projects/
+.aider*

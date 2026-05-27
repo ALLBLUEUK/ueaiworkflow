@@ -1,11 +1,20 @@
 cff-version: 1.2.0
-title: UEAI Workflow
-message: "If you use this teaching workflow, cite the repository."
+title: "经管类本科建模与写作 AI 智能体辅助工作流 (ueaiworkflow)"
+message: "If you use this workflow, please cite it as below."
 type: software
 authors:
-  - family-names: Jia
-    given-names: Ningyuan
+  - alias: "ALLBLUEUK"
 repository-code: "https://github.com/ALLBLUEUK/ueaiworkflow"
+url: "https://github.com/ALLBLUEUK/ueaiworkflow"
 license: MIT
-version: 0.1.0
+version: "2.0.0"
 date-released: 2026-05-27
+keywords:
+  - AI agent
+  - economics teaching
+  - undergraduate
+  - GTAP
+  - GEMPACK
+  - UN Comtrade
+  - LaTeX
+  - course workflow

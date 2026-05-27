@@ -1,12 +1,42 @@
-# Report Quality Rubric
+# Rule: 课程论文 / 报告评分量规
 
-Score reports using six dimensions:
+`/ueai-review` 与人工评阅共用本量规。
 
-1. question: clear research object and boundary
-2. data: traceable source and correct variable meaning
-3. method: explicit tool, model, or empirical path
-4. result: economic interpretation tied to output
-5. writing: coherent structure and formal academic style
-6. process: AI feedback and human revision log retained
+## 五维度评分（每维度 1–5，总分 25）
 
-Each dimension can be marked as excellent, adequate, or needs revision.
+| 维度 | 1 分 | 3 分 | 5 分 |
+|---|---|---|---|
+| 1 研究问题清晰度 | 题目宽泛、无 Q | 有 Q 但缺新意陈述 | Q 简练、why-matters 完整、marginal contribution ≤ 3 条 |
+| 2 文献逻辑 | 罗列、无 gap | gap 存在但模糊 | gap 明确，≥ 5 refs，外文 ≥ 3 |
+| 3 数据方法 | 数据 / 方法描述不全 | 列了数据库与方法但缺识别假设 | 数据 + 方法自包含、识别假设独立成段、可复现 |
+| 4 结果解释 | 报告数字无解释 | 有方向无量级或缺来源 | 方向 + 量级 + 含义三件套、每数字带 [来源: …]、含异质性与稳健性 |
+| 5 结论与边界 | 过度推论 | 结论与结果一致但缺边界 | 含「本研究不能说明…」、政策含义附假设 |
+
+## 加分 / 扣分项
+
+- (+1) 复现脚本可一键运行
+- (+1) 含交互式可视化或附录代码
+- (-1) 任何数字无来源
+- (-2) 任何疑似伪造编码 / 系数 / 文献
+- (-3) 未含学术诚信声明 / AI 使用说明
+
+## 评阅输出格式
+
+```
+评阅人：……
+评阅时间：……
+
+| 维度 | 分数 | 反馈 | 修改建议 |
+|------|------|------|----------|
+| 1 研究问题 | x/5 | … | … |
+| ...
+
+加分项：+x
+扣分项：-x
+综合分：x/25
+
+三条最重要修改：
+1. ...
+2. ...
+3. ...
+```

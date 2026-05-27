@@ -1,21 +1,37 @@
-# AI Use Boundary
+# Rule: AI 使用边界
 
-AI may support:
+适用范围：本仓库定义的所有 ueai 工作流阶段。
 
-- topic narrowing
-- data source search terms
-- field and variable explanation
-- tool command explanation
-- model output explanation
-- paper structure feedback
-- expression revision
+## 允许 AI 做的事
 
-Students remain responsible for:
+1. 把宽泛主题拆解为研究对象 / 变量 / 数据 / 方法 / 结果展示。
+2. 提示候选数据库与字段名（前提：AI 自己知道；不知道时必须明示）。
+3. 解释命令、报错、模型假设。
+4. 提供回归 / .cmf / .do / .R 的代码骨架。
+5. 翻译模型输出为方向 / 量级 / 经济含义三件套。
+6. 按五维度检查论文结构，给出大纲建议。
+7. 整理 AI 反馈日志。
 
-- final topic choice
-- data source verification
-- variable definition
-- model selection
-- result interpretation
-- academic integrity
-- final submission
+## 严格禁止 AI 做的事
+
+1. **伪造数据 / 编码 / 系数 / 数值**。HS 编码、GTAP 集合、回归系数若不确定，必须写「请学生核验」。
+2. **替学生写完整段落**。stage 04 的输出是大纲与建议，不是成稿正文。
+3. **跳过人工核验段**。每个阶段文件的 `## 人工核验与修改` 必须由学生填写，AI 不得自动填充。
+4. **在 evidence/ 下生成原始证据文件**。evidence/ 只存学生从真实数据库 / 模型导出的原始材料。
+5. **在结果中写「显著」「重大」等无量词形容词**。所有结果须带数字 + 单位 + 来源。
+6. **跳过学术诚信声明**。stage 04 必须包含 AI 使用说明段。
+7. **跨阶段「一键生成最终论文」**。工作流必须按 00→01→…→05 顺序，每阶段独立等学生核验。
+
+## 当用户要求 AI 越界时
+
+直接引用本规则文件中的对应条目，例如：
+
+> 抱歉，根据 rules/ai-use-boundary.md §2.1，HS 编码与冲击量级必须由学生在 WITS 与 USTR 列表中核验，我不能直接给出最终数字。我可以列出候选 HS 章节并指引检索路径。
+
+## 学术诚信底线
+
+学生须在 04_writing/paper_outline.md 的「学术诚信声明」段说明：
+- 用了什么 AI 工具
+- 用在哪些环节
+- 哪些是 AI 建议、哪些是本人修改
+- 哪些数据 / 模型 / 结果由本人独立核验
