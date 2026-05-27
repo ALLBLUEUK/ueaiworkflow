@@ -38,6 +38,12 @@ python -m pip install -e .
 ## Start a course project
 
 ```bash
+ueai new "美国加征关税的宏观影响分析" "如何分析美国加征关税对中国出口、福利和产业结构的影响" trade course-projects/tariff-impact
+```
+
+The long option form also works:
+
+```bash
 ueai new "美国加征关税的宏观影响分析" ^
   --course trade ^
   --question "如何分析美国加征关税对中国出口、福利和产业结构的影响" ^

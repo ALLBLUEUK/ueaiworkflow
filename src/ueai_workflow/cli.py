@@ -106,14 +106,21 @@ def prompts_text() -> str:
 
 
 def new_project(args: argparse.Namespace) -> int:
-    course = COURSES[args.course]
-    project_dir = Path(args.output or slugify(args.title)).resolve()
+    course_key = args.course_option or args.course or "generic"
+    if course_key not in COURSES:
+        raise SystemExit(f"Unknown course: {course_key}")
+    question = args.question_option or args.question
+    if not question:
+        raise SystemExit("Missing research question. Use positional question or --question.")
+    output = args.output_option or args.output
+    course = COURSES[course_key]
+    project_dir = Path(output or slugify(args.title)).resolve()
     project_dir.mkdir(parents=True, exist_ok=True)
 
     created: list[str] = []
     for stage in STAGES:
         path = project_dir / stage["file"]
-        if write_if_missing(path, stage_text(args.title, course, args.question, stage)):
+        if write_if_missing(path, stage_text(args.title, course, question, stage)):
             created.append(str(path.relative_to(project_dir)))
 
     extra_files = {
@@ -121,12 +128,12 @@ def new_project(args: argparse.Namespace) -> int:
 
 对应课程：{course}
 
-研究问题：{args.question}
+研究问题：{question}
 
 本目录由 `ueai new` 创建，用于本科经管类课程的AI辅助数据、模型、写作和佐证归档工作流。
 """,
         "prompt_templates.md": prompts_text(),
-        "evidence/evidence_checklist.md": evidence_text(args.title, course, args.question),
+        "evidence/evidence_checklist.md": evidence_text(args.title, course, question),
     }
     for rel, text in extra_files.items():
         if write_if_missing(project_dir / rel, text):
@@ -181,9 +188,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     new = sub.add_parser("new", help="Create a course project workflow.")
     new.add_argument("title", help="Project or paper title.")
-    new.add_argument("--course", choices=sorted(COURSES), default="generic")
-    new.add_argument("--question", required=True, help="Research question or course task.")
-    new.add_argument("--output", help="Output directory.")
+    new.add_argument("question", nargs="?", help="Research question or course task.")
+    new.add_argument("course", nargs="?", choices=sorted(COURSES), help="Course key.")
+    new.add_argument("output", nargs="?", help="Output directory.")
+    new.add_argument("--course", dest="course_option", choices=sorted(COURSES))
+    new.add_argument("--question", dest="question_option", help="Research question or course task.")
+    new.add_argument("--output", dest="output_option", help="Output directory.")
     new.set_defaults(func=new_project)
 
     status = sub.add_parser("status", help="Show workflow stage status.")

@@ -25,3 +25,11 @@ def test_new_and_validate(tmp_path: Path) -> None:
 
 def test_prompts_command() -> None:
     assert main(["prompts"]) == 0
+
+
+def test_new_positional_form(tmp_path: Path) -> None:
+    project = tmp_path / "positional"
+    rc = main(["new", "tariff impact", "How do tariffs affect exports?", "trade", str(project)])
+    assert rc == 0
+    assert (project / "prompt_templates.md").exists()
+    assert main(["validate", str(project)]) == 0
